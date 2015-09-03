@@ -1,6 +1,11 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
 
 # Folder config file
 Desktop.ini
