@@ -59,6 +59,8 @@
   <script>
     Breakpoints();
   </script>
+
+  @yield('page-css-top')
 </head>
 <body class="dashboard">
 
@@ -223,6 +225,28 @@
           <li class="site-menu-category">General</li>
           
           <li class="site-menu-category">Elements</li>
+
+          <li class="site-menu-item has-sub">
+            <a data-slug="uikit" href="javascript:void(0)">
+              <i aria-hidden="true" class="site-menu-icon wb-bookmark"></i>
+              <span class="site-menu-title">Password Store</span>
+              <span class="site-menu-arrow"></span>
+            </a>
+            <ul class="site-menu-sub" style="">
+              <li class="site-menu-item is-shown">
+                <a data-slug="uikit-buttons" href="{{ URL::to('passwordstore/entry') }}" class="animsition-link">
+                  <i aria-hidden="true" class="site-menu-icon "></i>
+                  <span class="site-menu-title">Entry</span>
+                </a>
+              </li>
+              <li class="site-menu-item is-shown {{ (Request::is('passwordstore/view') ? 'active' : '') }}">
+                <a data-slug="uikit-buttons" href="{{ URL::to('passwordstore/view') }}" class="animsition-link">
+                  <i aria-hidden="true" class="site-menu-icon "></i>
+                  <span class="site-menu-title">View</span>
+                </a>
+              </li>
+            </ul>
+          </li>
           
           <li class="site-menu-item">
             <a class="animsition-link" href="angular/index.html#/angularui/alert" data-slug="angular">
@@ -305,6 +329,55 @@
   </footer>
 
   <!-- Core  -->
+  <!--<script src="{{ asset('/assets/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/animsition/jquery.animsition.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/asscroll/jquery-asScroll.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/mousewheel/jquery.mousewheel.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/asscrollable/jquery.asScrollable.all.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/ashoverscroll/jquery-asHoverScroll.min.js') }}"></script>-->
+
+  <!-- Plugins -->
+  <!--<script src="{{ asset('/assets/vendor/switchery/switchery.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/intro-js/intro.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/screenfull/screenfull.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/slidepanel/jquery-slidePanel.min.js') }}"></script>-->
+
+  <!-- Plugins For This Page -->
+  <!--<script src="{{ asset('/assets/vendor/skycons/skycons.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/chartist-js/chartist.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/aspieprogress/jquery-asPieProgress.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/jvectormap/jquery-jvectormap.min.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js') }}"></script>
+  <script src="{{ asset('/assets/vendor/matchheight/jquery.matchHeight-min.js') }}"></script>-->
+
+  <!-- Scripts -->
+  <!--<script src="{{ asset('/assets/js/core.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/site.min.js') }}"></script>
+
+  <script src="{{ asset('/assets/js/sections/menu.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/sections/menubar.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/sections/gridmenu.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/sections/sidebar.min.js') }}"></script>
+
+  <script src="{{ asset('/assets/js/configs/config-colors.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/configs/config-tour.min.js') }}"></script>
+
+  <script src="{{ asset('/assets/js/components/asscrollable.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/components/animsition.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/components/slidepanel.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/components/switchery.min.js') }}"></script>-->
+
+  <!-- Scripts For This Page -->
+  <!--<script src="{{ asset('/assets/js/components/matchheight.min.js') }}"></script>
+  <script src="{{ asset('/assets/js/components/jvectormap.min.js') }}"></script>
+
+
+
+  <script src="{{ asset('/assets/examples/js/dashboard/v1.js') }}"></script>-->
+
+    <!-- Core  -->
   <script src="{{ asset('/assets/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('/assets/vendor/bootstrap/bootstrap.min.js') }}"></script>
   <script src="{{ asset('/assets/vendor/animsition/jquery.animsition.min.js') }}"></script>
@@ -313,22 +386,8 @@
   <script src="{{ asset('/assets/vendor/asscrollable/jquery.asScrollable.all.min.js') }}"></script>
   <script src="{{ asset('/assets/vendor/ashoverscroll/jquery-asHoverScroll.min.js') }}"></script>
 
-  <!-- Plugins -->
-  <script src="{{ asset('/assets/vendor/switchery/switchery.min.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/intro-js/intro.min.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/screenfull/screenfull.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/slidepanel/jquery-slidePanel.min.js') }}"></script>
 
-  <!-- Plugins For This Page -->
-  <script src="{{ asset('/assets/vendor/skycons/skycons.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/chartist-js/chartist.min.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/aspieprogress/jquery-asPieProgress.min.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/jvectormap/jquery-jvectormap.min.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js') }}"></script>
-  <script src="{{ asset('/assets/vendor/matchheight/jquery.matchHeight-min.js') }}"></script>
-
-  <!-- Scripts -->
+   <!-- Scripts -->
   <script src="{{ asset('/assets/js/core.min.js') }}"></script>
   <script src="{{ asset('/assets/js/site.min.js') }}"></script>
 
@@ -345,11 +404,9 @@
   <script src="{{ asset('/assets/js/components/slidepanel.min.js') }}"></script>
   <script src="{{ asset('/assets/js/components/switchery.min.js') }}"></script>
 
-  <!-- Scripts For This Page -->
-  <script src="{{ asset('/assets/js/components/matchheight.min.js') }}"></script>
-  <script src="{{ asset('/assets/js/components/jvectormap.min.js') }}"></script>
 
-  <script src="{{ asset('/assets/examples/js/dashboard/v1.js') }}"></script>
+
+  @yield('page-scripts-bottom')
 
 </body>
 </html>

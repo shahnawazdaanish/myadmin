@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('demo');
 });
+
+Route::get('/pass', function () {
+    return view('password.entrypass');
+});
+
+Route::get('passwordstore/entry', 'StorePasswordController@entry');
+Route::get('passwordstore/view', 'StorePasswordController@view');
+Route::get('passwordstore/edit/{id}', 'StorePasswordController@edit');
+Route::get('passwordstore/delete/{id}', 'StorePasswordController@destroy');
+
+Route::post('passwordstore/store', 'StorePasswordController@store');
